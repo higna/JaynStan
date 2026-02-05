@@ -328,7 +328,7 @@ const HomePage = () => {
               ].map((item, index) => (
                 <div
                   key={`${item.id}-${index}`}
-                  className="group relative flex-shrink-0 carousel-card h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 hover:shadow-xl transition-all duration-300 cursor-pointer border border-base-300"
+                  className="group relative shrink-0 carousel-card h-64 rounded-2xl overflow-hidden bg-linear-to-br from-primary/20 to-secondary/20 hover:shadow-xl transition-all duration-300 cursor-pointer border border-base-300"
                 >
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
                     <div className="text-center space-y-3">
@@ -349,7 +349,7 @@ const HomePage = () => {
 
           <div className="text-center">
             <Link
-              to="/portfolio"
+              to="/services"
               className="btn btn-primary btn-lg rounded-full gap-2"
             >
               View Full Portfolio
