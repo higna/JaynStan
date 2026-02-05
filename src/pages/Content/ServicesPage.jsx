@@ -175,7 +175,7 @@ const ServicesPage = () => {
       <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-primary/10 via-secondary/5 to-accent/10">
         <div className="max-w-7xl mx-auto text-center space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            Our Portfolio
+            Our Services
           </h1>
           <p className="text-lg md:text-xl text-base-content/80 max-w-2xl mx-auto">
             Explore our diverse collection of creative works across multiple

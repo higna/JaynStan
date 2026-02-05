@@ -247,8 +247,7 @@ const AboutPage = () => {
                   Jaynstan
                 </h2>
                 <p className="text-lg text-base-content/80 leading-relaxed">
-                  Jaynstan keydfqfgjwhfgjkwrh fsbkrhwfvsjkvfsklv
-                  ljvhfeigvrifefoejv ofheufgvieufv. We are a creative hub
+                  We are a creative hub
                   dedicated to pushing the boundaries of art, fashion, and
                   innovation.
                 </p>
@@ -367,7 +366,7 @@ const AboutPage = () => {
                     placeholder="Your message here..."
                   />
                 </div>
-                <button type="submit" className="w-full btn btn-primary gap-2">
+                <button type="submit" className="w-full btn btn-primary gap-2 btn-outline ">
                   <Send size={18} />
                   Send Message
                 </button>
