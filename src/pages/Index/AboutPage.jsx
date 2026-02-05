@@ -76,7 +76,7 @@ const AboutPage = () => {
     <div className="min-h-screen bg-base-100">
       {/* Hero Section - The Genesis */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-secondary/5 to-accent/10"></div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -115,7 +115,7 @@ const AboutPage = () => {
                 influences.
               </p>
             </div>
-            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-linear-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
               <div className="text-center space-y-4 p-8">
                 <Sparkles className="w-16 h-16 mx-auto text-primary" />
                 <p className="text-base-content/70 italic">
@@ -153,7 +153,7 @@ const AboutPage = () => {
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-secondary/20 to-accent/20 flex items-center justify-center order-2 md:order-1">
+            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-linear-to-br from-secondary/20 to-accent/20 flex items-center justify-center order-2 md:order-1">
               <div className="text-center space-y-4 p-8">
                 <Target className="w-16 h-16 mx-auto text-secondary" />
                 <p className="text-base-content/70 italic">
@@ -201,7 +201,7 @@ const AboutPage = () => {
                   key={index}
                   className="group bg-base-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-base-300 hover:border-primary/50"
                 >
-                  <div className="relative h-48 rounded-xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 mb-6 flex items-center justify-center">
+                  <div className="relative h-48 rounded-xl overflow-hidden bg-linear-to-br from-primary/10 to-secondary/10 mb-6 flex items-center justify-center">
                     <IconComponent className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
                     <p className="absolute bottom-2 text-xs text-base-content/50 italic">
                       Section image
@@ -239,7 +239,7 @@ const AboutPage = () => {
                   key={index}
                   className="group bg-base-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-base-300 hover:border-secondary/50"
                 >
-                  <div className="relative h-48 rounded-xl overflow-hidden bg-gradient-to-br from-secondary/10 to-accent/10 mb-6 flex items-center justify-center">
+                  <div className="relative h-48 rounded-xl overflow-hidden bg-linear-to-br from-secondary/10 to-accent/10 mb-6 flex items-center justify-center">
                     <IconComponent className="w-12 h-12 text-secondary group-hover:scale-110 transition-transform duration-300" />
                     <p className="absolute bottom-2 text-xs text-base-content/50 italic">
                       Section image
@@ -276,7 +276,7 @@ const AboutPage = () => {
                 className="group bg-base-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-base-300 hover:border-accent/50 cursor-pointer"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
+                  <div className="shrink-0 w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
                     <Calendar className="w-6 h-6 text-accent" />
                   </div>
                   <div className="flex-1 space-y-2">
