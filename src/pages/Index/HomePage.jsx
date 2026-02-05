@@ -168,6 +168,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
       {/* Statistics Section */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-100">
         <div className="max-w-7xl mx-auto">
@@ -228,6 +229,10 @@ const HomePage = () => {
         </div>
       </section>
 
+      <div className="max-w-7xl mx-auto">
+        <div className="border-t border" />
+      </div>
+
       {/* Why Choose Us Section */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-200/50">
         <div className="max-w-7xl mx-auto">
@@ -248,8 +253,8 @@ const HomePage = () => {
               <h3 className="text-xl font-bold mb-3">Innovation First</h3>
               <p className="text-base-content/70 leading-relaxed">
                 We stay ahead of trends and leverage cutting-edge technologies
-                to deliver forward-thinking solutions that set you apart from the
-                competition.
+                to deliver forward-thinking solutions that set you apart from
+                the competition.
               </p>
             </div>
             <div className="bg-base-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-base-300">
@@ -279,7 +284,7 @@ const HomePage = () => {
       </section>
 
       {/* Featured Portfolio Preview - Sliding Carousel */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-100">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-300">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 space-y-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
@@ -299,12 +304,26 @@ const HomePage = () => {
                 ...Array.from({ length: 6 }, (_, i) => ({
                   id: i + 1,
                   title: `Featured Project ${i + 1}`,
-                  category: ["Software", "Design", "Art", "Architecture", "Tech", "Creative"][i],
+                  category: [
+                    "Software",
+                    "Design",
+                    "Art",
+                    "Architecture",
+                    "Tech",
+                    "Creative",
+                  ][i],
                 })),
                 ...Array.from({ length: 6 }, (_, i) => ({
                   id: i + 7,
                   title: `Featured Project ${i + 1}`,
-                  category: ["Software", "Design", "Art", "Architecture", "Tech", "Creative"][i],
+                  category: [
+                    "Software",
+                    "Design",
+                    "Art",
+                    "Architecture",
+                    "Tech",
+                    "Creative",
+                  ][i],
                 })),
               ].map((item, index) => (
                 <div
@@ -398,8 +417,8 @@ const HomePage = () => {
               Ready to Bring Your Vision to Life?
             </h2>
             <p className="text-lg text-base-content/80 max-w-2xl mx-auto">
-              Let's collaborate and create something extraordinary together.
-              Get in touch with us today to discuss your project.
+              Let's collaborate and create something extraordinary together. Get
+              in touch with us today to discuss your project.
             </p>
           </div>
           <div className="flex flex-wrap gap-4 justify-center">
