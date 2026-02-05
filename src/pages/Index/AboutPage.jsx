@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import {
   Sparkles,
@@ -19,6 +19,19 @@ import {
 import toast from "react-hot-toast";
 
 const AboutPage = () => {
+
+  /* Navigate to section */
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const teamMembers = [
     {
       role: "Creative Director",
@@ -236,8 +249,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      {/* Contact Section */}
+      <section id="contact" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left Column - Jaynstan Info and Connect */}
@@ -303,7 +316,7 @@ const AboutPage = () => {
             <div className="bg-base-200 rounded-2xl p-8 shadow-lg">
               <div className="flex items-center gap-2 mb-6">
                 <MessageSquare className="w-6 h-6 text-primary" />
-                <h3 className="text-2xl font-bold">Contact Form</h3>
+                <h3 className="text-2xl font-bold">Contact</h3>
               </div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>

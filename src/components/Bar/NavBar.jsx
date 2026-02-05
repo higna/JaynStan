@@ -16,7 +16,7 @@ const NavBar = () => {
     { to: "/", text: "Home" },
     { to: "/about", text: "About" },
     { to: "/services", text: "Services" },
-    { to: "/contact", text: "Contact" },
+    { to: "/about#contact", text: "Contact" },
   ];
 
   useEffect(() => {
