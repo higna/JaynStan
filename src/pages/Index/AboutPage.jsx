@@ -3,24 +3,21 @@ import { Link } from "react-router";
 import {
   Sparkles,
   Users,
-  Target,
   Heart,
   Globe,
-  Calendar,
   ArrowRight,
-  Award,
-  Eye,
-  Palette,
   Mail,
   Send,
   MessageSquare,
   User,
   PaletteIcon,
+  ImageIcon,
+  Code2,
 } from "lucide-react";
 import toast from "react-hot-toast";
 
 const AboutPage = () => {
-  /* Navigate to section */
+  /* Navigate to contact section */
   useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.substring(1));
@@ -55,19 +52,19 @@ const AboutPage = () => {
 
   const culturalPosts = [
     {
-      title: "Fashion as a Cultural Statement",
+      title: "Designs That Speak, Stories That Stick",
       filter: "graphic-design",
-      icon: "PaletteIcon"
+      icon: ImageIcon,
     },
     {
-      title: "Art and Activism: A Powerful Alliance",
-      date: "February 4, 2026",
-      filter: "artwork-painting && architecture",
+      title: "Where Vision Meets Structure.",
+      filter: "artwork-painting",
+      icon: PaletteIcon,
     },
     {
-      title: "Engaging with Emerging Artists",
-      date: "February 4, 2026",
+      title: "Building Digital Experiences That Connect",
       filter: "graphic-design",
+      icon: Code2,
     },
   ];
 
@@ -87,7 +84,6 @@ const AboutPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend
     toast.success("Thank you for your message! We'll get back to you soon.");
     setFormData({
       name: "",
@@ -171,7 +167,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Creative Minds */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-200/50">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-300">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full text-primary font-semibold text-sm">
@@ -207,11 +203,11 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Cultural Conversations */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-200/50">
+      {/* Delivered Works */}
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-300/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-accent/90 font-semibold text-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-info/20 rounded-full text-info/90 font-semibold text-sm">
               <Globe size={16} />
               <span>Delivered works</span>
             </div>
@@ -219,36 +215,38 @@ const AboutPage = () => {
               Ideas Realized, Excellence Delivered
             </h2>
           </div>
-
           <div className="grid md:grid-cols-3 gap-6">
-            {culturalPosts.map((post, index) => (
-              <Link
-                key={index}
-                to={`/services?filter=${post.filter}`}
-                className="group bg-base-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-base-300 hover:border-accent/50 cursor-pointer"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="shrink-0 w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
-                    <Calendar className="w-6 h-6 text-accent" />
-                  </div>
-                  <div className="flex-1 space-y-2">
-                    <h3 className="font-semibold text-lg group-hover:text-accent transition-colors">
-                      {post.title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                      <span className="text-sm font-medium">Read more</span>
-                      <ArrowRight size={16} />
+            {culturalPosts.map((post, index) => {
+              const IconComponent = post.icon; // Remove the array brackets
+              return (
+                <Link
+                  key={index}
+                  to={`/services?filter=${post.filter}`}
+                  className="group bg-base-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-base-300 hover:border-accent/50 cursor-pointer"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 w-12 h-12 rounded-lg bg-info/20 flex items-center justify-center">
+                      <IconComponent className="w-6 h-6 text-info" />
+                    </div>
+                    <div className="flex-1 space-y-2">
+                      <h3 className="font-semibold text-lg group-hover:text-accent transition-colors">
+                        {post.title}
+                      </h3>
+                      <div className="flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="text-sm font-medium">Read more</span>
+                        <ArrowRight size={16} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-base-300">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left Column - Jaynstan Info and Connect */}
