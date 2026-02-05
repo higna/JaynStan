@@ -54,8 +54,128 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/*  */}
-      <section></section>
+      {/* Services Section */}
+      <section className="py-16 md:py-24 bg-base-100">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Services
+            </h2>
+            <p className="text-base-content/70 max-w-2xl mx-auto">
+              We bring your vision to life with our comprehensive range of
+              creative and technical services
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Software Development Card */}
+            <div className="card bg-base-200 hover:shadow-xl transition-shadow">
+              <div className="card-body items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <svg
+                    className="w-8 h-8 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    />
+                  </svg>
+                </div>
+                <h3 className="card-title text-xl mb-2">
+                  Software Development
+                </h3>
+                <p className="text-base-content/70">
+                  Custom software solutions tailored to your business needs with
+                  cutting-edge technology
+                </p>
+              </div>
+            </div>
+
+            {/* Graphic Design Card */}
+            <div className="card bg-base-200 hover:shadow-xl transition-shadow">
+              <div className="card-body items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+                  <svg
+                    className="w-8 h-8 text-secondary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                    />
+                  </svg>
+                </div>
+                <h3 className="card-title text-xl mb-2">Graphic Design</h3>
+                <p className="text-base-content/70">
+                  Eye-catching visual designs that communicate your brand's
+                  message effectively
+                </p>
+              </div>
+            </div>
+
+            {/* Painting Card */}
+            <div className="card bg-base-200 hover:shadow-xl transition-shadow">
+              <div className="card-body items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                  <svg
+                    className="w-8 h-8 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                    />
+                  </svg>
+                </div>
+                <h3 className="card-title text-xl mb-2">Painting</h3>
+                <p className="text-base-content/70">
+                  Professional painting services that transform spaces with
+                  color and creativity
+                </p>
+              </div>
+            </div>
+
+            {/* Architecture Card */}
+            <div className="card bg-base-200 hover:shadow-xl transition-shadow">
+              <div className="card-body items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <svg
+                    className="w-8 h-8 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                  </svg>
+                </div>
+                <h3 className="card-title text-xl mb-2">Architecture</h3>
+                <p className="text-base-content/70">
+                  Innovative architectural designs that blend functionality with
+                  aesthetic appeal
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

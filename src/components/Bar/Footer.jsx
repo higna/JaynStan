@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="flex gap-4">
             <Link to={"/privacy"}>Privacy</Link>
             <Link to={"/terms"}>Terms</Link>
-            <Link to={"/contact"}>Contact</Link>
+            <Link to={"/about"}>Contact</Link>
           </div>
         </div>
       </div>
