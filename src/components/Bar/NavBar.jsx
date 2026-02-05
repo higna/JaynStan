@@ -9,8 +9,7 @@ const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const toggleTheme = () =>
-    setTheme(theme === "luxury" ? "nord" : "luxury");
+  const toggleTheme = () => setTheme(theme === "luxury" ? "bumblebee" : "luxury");
 
   const navLinks = [
     { to: "/", text: "Home" },
@@ -29,15 +28,12 @@ const NavBar = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-transparent"
-          : "bg-transparent"
+      className={`sticky top-0 z-50 transition-all duration-300 backdrop-blur-md ${
+        scrolled ? "bg-base-100/60 shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
-          
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img

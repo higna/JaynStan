@@ -6,7 +6,7 @@ export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("luxury");
 
   const toggleTheme = () => {
-    setTheme(theme === "luxury" ? "nord" : "luxury");
+    setTheme(theme === "luxury" ? "bumblebee" : "luxury");
   };
 
   return (

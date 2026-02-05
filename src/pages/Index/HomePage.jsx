@@ -23,7 +23,7 @@ const HomePage = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-8 animate-fade-in text-white">
+            <div className="space-y-8 animate-fade-in text-primary">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white font-semibold text-sm border border-white/30">
                   <Sparkles size={16} />
@@ -32,9 +32,8 @@ const HomePage = () => {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
                   A{" "}
                   <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
-                    Creative Hub
+                    Creative Hub for Visionaries
                   </span>{" "}
-                  for Visionaries
                 </h1>
                 <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl">
                   Designs | Arts | Tech | Management | Fashion | Lifestyle
@@ -53,6 +52,10 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+      </section>
+      {/*  */}
+      <section>
+
       </section>
     </div>
   );
