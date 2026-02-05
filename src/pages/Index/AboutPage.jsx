@@ -15,6 +15,7 @@ import {
   Send,
   MessageSquare,
   User,
+  PaletteIcon,
 } from "lucide-react";
 import toast from "react-hot-toast";
 
@@ -55,13 +56,13 @@ const AboutPage = () => {
   const culturalPosts = [
     {
       title: "Fashion as a Cultural Statement",
-      date: "February 4, 2026",
       filter: "graphic-design",
+      icon: "PaletteIcon"
     },
     {
       title: "Art and Activism: A Powerful Alliance",
       date: "February 4, 2026",
-      filter: "artwork-painting",
+      filter: "artwork-painting && architecture",
     },
     {
       title: "Engaging with Emerging Artists",
@@ -215,7 +216,7 @@ const AboutPage = () => {
               <span>Delivered works</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-              Explore services that have been delivered
+              Ideas Realized, Excellence Delivered
             </h2>
           </div>
 
@@ -231,7 +232,6 @@ const AboutPage = () => {
                     <Calendar className="w-6 h-6 text-accent" />
                   </div>
                   <div className="flex-1 space-y-2">
-                    <p className="text-sm text-base-content/60">{post.date}</p>
                     <h3 className="font-semibold text-lg group-hover:text-accent transition-colors">
                       {post.title}
                     </h3>
