@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router";
 import { HomePage, AboutPage } from "./pages/Index";
-import { PortfolioPage } from "./pages/Content";
+import { ServicesPage } from "./pages/Content";
 import { NavBar, Footer } from "./components/Bar";
 import { useTheme } from "./context/ThemeContext";
 import { ThemeProvider } from "./context/ThemeContext";
@@ -21,7 +21,7 @@ const AppLayout = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/services" element={<ServicesPage />} />
           </Routes>
         </main>
         <Footer />

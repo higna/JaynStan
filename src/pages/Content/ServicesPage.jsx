@@ -172,7 +172,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-base-100">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10">
+      <section className="relative py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-primary/10 via-secondary/5 to-accent/10">
         <div className="max-w-7xl mx-auto text-center space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
             Our Portfolio
@@ -241,7 +241,7 @@ const ServicesPage = () => {
                     key={item.id}
                     className="group bg-base-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-base-300 hover:border-primary/50"
                   >
-                    <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
+                    <div className="relative h-48 bg-linear-to-br from-primary/20 to-secondary/20 overflow-hidden">
                       <div className="absolute inset-0 flex items-center justify-center">
                         <CategoryIcon className="w-16 h-16 text-primary/50 group-hover:scale-110 transition-transform duration-300" />
                       </div>

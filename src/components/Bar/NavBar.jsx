@@ -9,13 +9,14 @@ const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const toggleTheme = () => setTheme(theme === "luxury" ? "bumblebee" : "luxury");
+  const toggleTheme = () =>
+    setTheme(theme === "luxury" ? "bumblebee" : "luxury");
 
   const navLinks = [
     { to: "/", text: "Home" },
     { to: "/about", text: "About" },
     { to: "/services", text: "Services" },
-    { to: "/portfolio", text: "Portfolio" },
+    { to: "/contact", text: "Contact" },
   ];
 
   useEffect(() => {

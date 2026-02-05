@@ -141,18 +141,17 @@ const HomePage = () => {
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
-        <img
-          src="/Group.png"
-          alt="Divider Background"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_50%]"
-        />
-
-       
+        <div>
+          <img
+            src="/Group.png"
+            alt="Divider Background"
+            className="absolute inset-0 h-full w-full object-cover object-[50%_50%]"
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-black/30  to-black/40"></div>
+        </div>
       </section>
       {/*  */}
       <section className="relative min-h-[40vh] flex items-center overflow-hidden"></section>
-
-      
     </div>
   );
 };

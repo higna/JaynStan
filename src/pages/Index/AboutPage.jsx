@@ -105,7 +105,9 @@ const AboutPage = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/30 backdrop-blur-md rounded-full text-white font-semibold text-sm border border-primary/40 shadow-lg">
               <Sparkles size={16} className="drop-shadow-glow" />
-              <span className="drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">The Genesis of Jaynstan Espire Enclave</span>
+              <span className="drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                The Genesis of Jaynstan Espire Enclave
+              </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
               <span className="inline-block bg-black/40 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-2xl border border-white/10">
@@ -143,6 +145,12 @@ const AboutPage = () => {
                   alt="Hero Background"
                   className="absolute inset-0 h-full w-full object-cover object-[50%_10%]"
                 />
+
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <div className="absolute inset-0 bg-linear-to-b from-black/20 to-black/15"></div>
+                  <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+                  <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -235,11 +243,14 @@ const AboutPage = () => {
             {/* Left Column - Jaynstan Info and Connect */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Jaynstan</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  Jaynstan
+                </h2>
                 <p className="text-lg text-base-content/80 leading-relaxed">
-                  Jaynstan keydfqfgjwhfgjkwrh fsbkrhwfvsjkvfsklv ljvhfeigvrifefoejv
-                  ofheufgvieufv. We are a creative hub dedicated to pushing the
-                  boundaries of art, fashion, and innovation.
+                  Jaynstan keydfqfgjwhfgjkwrh fsbkrhwfvsjkvfsklv
+                  ljvhfeigvrifefoejv ofheufgvieufv. We are a creative hub
+                  dedicated to pushing the boundaries of art, fashion, and
+                  innovation.
                 </p>
               </div>
               <div>
@@ -356,10 +367,7 @@ const AboutPage = () => {
                     placeholder="Your message here..."
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="w-full btn btn-primary gap-2"
-                >
+                <button type="submit" className="w-full btn btn-primary gap-2">
                   <Send size={18} />
                   Send Message
                 </button>
