@@ -145,9 +145,9 @@ const AboutPage = () => {
               <p className="text-lg text-base-content/80 leading-relaxed">
                 Jaynstan Espire Enclave emerged from the collective dreams of
                 artists and innovators who sought to redefine the boundaries of
-                arts, tech, visuals and fashion. Our journey is one of perseverance and
-                inspiration, reflecting a vibrant tapestry of cultural
-                influences.
+                arts, tech, visuals and fashion. Our journey is one of
+                perseverance and inspiration, reflecting a vibrant tapestry of
+                cultural influences.
               </p>
             </div>
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden bg-linear-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
@@ -192,8 +192,9 @@ const AboutPage = () => {
                   <img
                     src={member.image}
                     alt={member.role}
-                    className="absolute inset-0 h-full w-full object-cover object-[50%_20%]"
+                    className="absolute inset-0 h-full w-full object-cover object-[50%_15%] origin-center"
                   />
+                  <div className="absolute inset-0 bg-linear-to-b from-black/10 via-black/15 to-black/10"></div>
                 </div>
                 <h3 className="text-xl font-bold mb-3">{member.role}</h3>
                 <p className="text-base-content/70 leading-relaxed">
