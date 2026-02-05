@@ -1,4 +1,11 @@
-import { Building, Code2, ImageIcon, Mail, Palette, Sparkles } from "lucide-react";
+import {
+  Building,
+  Code2,
+  ImageIcon,
+  Mail,
+  Palette,
+  Sparkles,
+} from "lucide-react";
 import React from "react";
 import { Link } from "react-router";
 
@@ -6,7 +13,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-base-100">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="/Hero.png"
@@ -23,7 +30,7 @@ const HomePage = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-8 animate-fade-in text-primary">
+            <div className="space-y-8 text-primary animate-[slideInLeft_0.8s_ease-out_both]">
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-white font-semibold text-sm border border-white/30">
                   <Sparkles size={16} />
@@ -54,25 +61,24 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Core Services*/}
       <section className="py-16 md:py-24 bg-base-300">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Services
+              Core Services
             </h2>
             <p className="text-base-content/70 max-w-2xl mx-auto">
               We bring your vision to life with our comprehensive range of
               creative and technical services
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Software Development Card */}
-            <div className="card bg-base-200 hover:shadow-xl transition-shadow">
+            <div className="card bg-base-200 hover:shadow-xl transition-shadow animate-[fallIn_0.6s_ease-out_0.1s_both]">
               <div className="card-body items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <Code2 size={24} className="text-success"/>
+                <div className="w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mb-4">
+                  <Code2 size={24} className="text-success" />
                 </div>
                 <h3 className="card-title text-xl mb-2">
                   Software Development
@@ -85,9 +91,9 @@ const HomePage = () => {
             </div>
 
             {/* Graphic Design Card */}
-            <div className="card bg-base-200 hover:shadow-xl transition-shadow">
+            <div className="card bg-base-200 hover:shadow-xl transition-shadow animate-[fallIn_0.6s_ease-out_0.2s_both]">
               <div className="card-body items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-warning/20 flex items-center justify-center mb-4">
                   <ImageIcon size={24} className="text-warning" />
                 </div>
                 <h3 className="card-title text-xl mb-2">Graphic Design</h3>
@@ -99,9 +105,9 @@ const HomePage = () => {
             </div>
 
             {/* Painting Card */}
-            <div className="card bg-base-200 hover:shadow-xl transition-shadow">
+            <div className="card bg-base-200 hover:shadow-xl transition-shadow animate-[fallIn_0.6s_ease-out_0.3s_both]">
               <div className="card-body items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-info/20 flex items-center justify-center mb-4">
                   <Palette size={24} className="text-info" />
                 </div>
                 <h3 className="card-title text-xl mb-2">Artwork | Painting</h3>
@@ -113,9 +119,9 @@ const HomePage = () => {
             </div>
 
             {/* Architecture Card */}
-            <div className="card bg-base-200 hover:shadow-xl transition-shadow">
+            <div className="card bg-base-200 hover:shadow-xl transition-shadow animate-[fallIn_0.6s_ease-out_0.4s_both]">
               <div className="card-body items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-error/20 flex items-center justify-center mb-4">
                   <Building size={24} className="text-error" />
                 </div>
                 <h3 className="card-title text-xl mb-2">Architecture</h3>
