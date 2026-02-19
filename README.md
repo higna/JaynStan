@@ -61,7 +61,7 @@ npm start
   Visit JAYNSTAN Espire
 </a>
 
-📸 Preview
+## 📸 Preview
 <img width="1503" height="920" alt="Screenshot 2026-02-16 145233" src="https://github.com/user-attachments/assets/ebdeebaa-c047-4a8d-9d9b-a8fdefd04e63" />
 
 
