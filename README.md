@@ -1,17 +1,69 @@
-# React + Vite
+# 🌐 JAYNSTAN Espire
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern portfolio website built to showcase the identity, services, and work of the JAYNSTAN Espire organization.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Overview
 
-## React Compiler
+JAYNSTAN Espire is a responsive web application designed to present an organization’s brand, highlight its services, and communicate its value clearly to visitors.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The platform focuses on clean design, smooth user experience, and accessibility across devices.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# JaynStan" 
+## ✨ Features
+
+- 📱 Fully responsive design  
+- 🎯 Clean and modern user interface  
+- 📄 Service and portfolio showcase  
+- ⚡ Fast and optimized performance  
+- 🌐 Cross-browser compatibility  
+
+---
+
+## 🛠️ Tech Stack
+
+- React.js  
+- Tailwind CSS 
+
+---
+
+## 📂 Project Structure
+```bash
+JAYNSTAN-ESPIRE/
+│
+├── public/ # Static assets
+├── src/ # React components and pages
+├── package.json
+```
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/higna/jaynstan-espire.git
+cd jaynstan-espire
+```
+### 2. Install Dependencies
+```bash
+npm install
+```
+### 3. Run the Application
+```bash
+npm start
+```
+## 🌐 Live Preview
+
+<a href="https://jaynstan.vercel.app" target="_blank">
+  Visit JAYNSTAN Espire
+</a>
+
+📸 Preview
+<img width="1503" height="920" alt="Screenshot 2026-02-16 145233" src="https://github.com/user-attachments/assets/ebdeebaa-c047-4a8d-9d9b-a8fdefd04e63" />
+
+
+📄 License
+MIT License
