@@ -133,6 +133,26 @@ export class AuthService implements OnModuleInit {
     return result.rows[0];
   }
 
+  async deleteManagedAccount(userId: string, actor: AuthenticatedUser) {
+    if (userId === actor.id) throw new ForbiddenException('You cannot delete your own account.');
+
+    return this.database.transaction(async (client) => {
+      await client.query('SELECT pg_advisory_xact_lock(20261118)');
+      const target = await client.query<{ role: UserRole }>(
+        'SELECT role FROM users WHERE id = $1 FOR UPDATE', [userId],
+      );
+      if (!target.rowCount) throw new NotFoundException('User account not found.');
+      if (target.rows[0].role === 'superadmin') {
+        const count = await client.query<{ count: string }>("SELECT count(*)::text AS count FROM users WHERE role = 'superadmin'");
+        if (Number(count.rows[0].count) <= 1) {
+          throw new ForbiddenException('The last superadmin account cannot be deleted.');
+        }
+      }
+      await client.query('DELETE FROM users WHERE id = $1', [userId]);
+      return { deleted: true, id: userId };
+    });
+  }
+
   async getProfile(userId: string) {
     const result = await this.database.query(
       `SELECT id, full_name, email, profile_image_url, phone, role, email_verified, (password_hash IS NOT NULL) AS has_password

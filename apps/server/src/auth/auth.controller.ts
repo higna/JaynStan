@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Delete,
   Get,
   HttpCode,
   Param,
@@ -60,6 +61,15 @@ export class AuthController {
   updateUserRole(@Param('id', ParseUUIDPipe) id: string, @Body('role') role: string, @CurrentUser() actor: AuthenticatedUser) {
     if (!['user', 'admin', 'superadmin'].includes(role)) throw new BadRequestException('Role must be user, admin, or superadmin.');
     return this.auth.updateUserRole(id, role as UserRole, actor);
+  }
+
+  @Delete('admin/users/:id')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('superadmin')
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Delete a platform account (superadmin only)' })
+  deleteUser(@Param('id', ParseUUIDPipe) id: string, @CurrentUser() actor: AuthenticatedUser) {
+    return this.auth.deleteManagedAccount(id, actor);
   }
 
   @Post('auth/verify-email')

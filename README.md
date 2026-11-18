@@ -53,7 +53,7 @@ Set these API environment variables in Render:
 - `BACKEND_URL` to the public Render service URL, with no trailing slash
 - `SWAGGER_ENABLED=false`
 
-Add optional integration variables when those features are configured: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_CALLBACK_URL` (the Render URL plus `/api/auth/google/callback`), Cloudinary credentials, and Brevo credentials. Set the OAuth provider's callback URL to the same callback URL. Render supplies `PORT`; the API uses it automatically. Database migrations are applied when the API starts.
+Add optional integration variables when those features are configured: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_CALLBACK_URL` (the Render URL plus `/api/auth/google/callback`), Cloudinary credentials, and Brevo credentials. For account invitation emails, also set `MAIL_ENABLED=true`, `BREVO_API_KEY`, and `BREVO_SENDER_EMAIL`. Set the OAuth provider's callback URL to the same callback URL. Render supplies `PORT`; the API uses it automatically. Database migrations are applied when the API starts.
 
 ### Vercel client
 
