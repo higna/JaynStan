@@ -1,4 +1,4 @@
-import { BadRequestException, Body, Controller, Get, Param, ParseUUIDPipe, Patch, Post, Req, UseGuards } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Delete, Get, Param, ParseUUIDPipe, Patch, Post, Req, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth } from '@nestjs/swagger';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import type { Request } from 'express';
@@ -29,6 +29,13 @@ export class SupportController {
   @ApiBearerAuth()
   @ApiOperation({ summary: 'List support tickets and their replies' })
   listTickets() { return this.support.listTickets(); }
+
+  @Delete('admin/tickets/:id')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('superadmin')
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Delete a support ticket and its replies (superadmin only)' })
+  deleteTicket(@Param('id', ParseUUIDPipe) id: string) { return this.support.deleteTicket(id); }
 
   @Post('admin/tickets/:id/replies')
   @UseGuards(JwtAuthGuard, RolesGuard)

@@ -74,6 +74,12 @@ export class SupportService {
     return result.rows;
   }
 
+  async deleteTicket(ticketId: string) {
+    const result = await this.database.query('DELETE FROM support_tickets WHERE id = $1 RETURNING id', [ticketId]);
+    if (!result.rowCount) throw new NotFoundException('Support ticket not found.');
+    return { deleted: true, id: ticketId };
+  }
+
   async replyToTicket(ticketId: string, sender: AuthenticatedUser, messageInput: string) {
     const message = messageInput.trim();
     const result = await this.database.query<TicketRow>(
