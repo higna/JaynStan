@@ -2,7 +2,7 @@ import { useState, type FormEvent, type ReactNode } from 'react';
 import { ArrowLeft, Eye, EyeOff, LockKeyhole, ShieldCheck, Sparkles } from 'lucide-react';
 import { Link, useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
-import { ApiError, apiRequest } from '../../lib/api';
+import { ApiError, apiRequest, apiUrl } from '../../lib/api';
 import { useAuth, type AuthUser } from '../../context/AuthContext';
 
 type AuthResult = { accessToken: string; tokenType: 'Bearer'; user: AuthUser };
@@ -88,5 +88,5 @@ export function AuthField({ label, type, value, onChange, autoComplete, minLengt
 }
 
 export function GoogleButton() {
-  return <a href="/api/auth/google" className="btn mt-3 w-full border-white/20 bg-white/[.03] text-white hover:border-[#e6c34f]/60 hover:bg-white/[.07]">Continue with Google</a>;
+  return <a href={apiUrl('/auth/google')} className="btn mt-3 w-full border-white/20 bg-white/[.03] text-white hover:border-[#e6c34f]/60 hover:bg-white/[.07]">Continue with Google</a>;
 }

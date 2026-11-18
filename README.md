@@ -35,11 +35,13 @@ The client is a static Vite app for Vercel. The NestJS API runs as a Render web 
 
 Create a Render Web Service from this repository with the repository root as its Root Directory:
 
-- Build command: `npm ci && npm run build:server`
+- Build command: `npm ci --include=dev && npm run build:server`
 - Start command: `npm run start:server`
 - Health check path: `/health/live`
 
 Create a Redis service (Render Key Value) and a Supabase project. In the Supabase dashboard, open **Connect**, choose **Session pooler**, and copy its connection string into Render's `DATABASE_URL`. Use the supplied host, username, and port (session mode uses port `5432`); don't substitute the direct database endpoint or transaction pooler URL. Add `sslmode=require` to the URL query if Supabase's copied string does not already require SSL. URL-encode special characters in the database password. The Render server can use Supabase's shared pooler over IPv4.
+
+For `REDIS_URL`, copy the **Internal URL** from the Render Key Value service's **Connect** menu. It must be a URL such as `redis://red-xxxxxxxxxxxxxxxxxxxx:6379` (or `rediss://...` when using the external URL), not just the Render service ID. Keep the API and Key Value service in the same Render region to use the internal URL.
 
 Set these API environment variables in Render:
 
