@@ -227,7 +227,12 @@ export class AuthService implements OnModuleInit {
     } catch {
       throw new ServiceUnavailableException('Email actions are temporarily unavailable. Please try again.');
     }
-    const frontendUrl = this.config.get<string>('FRONTEND_URL', 'http://localhost:2000').replace(/\/$/, '');
+    const configuredFrontendUrl = this.config.get<string>('PUBLIC_URL') || this.config.get<string>('FRONTEND_URL');
+    const frontendUrl = configuredFrontendUrl?.replace(/\/$/, '')
+      || (this.config.get<string>('NODE_ENV') === 'production' ? '' : 'http://localhost:2000');
+    if (!frontendUrl) {
+      throw new ServiceUnavailableException('Email links are not configured. Set PUBLIC_URL or FRONTEND_URL to the deployed client URL.');
+    }
     const link = `${frontendUrl}/${action === 'verify' ? 'verify-email' : 'reset-password'}?token=${encodeURIComponent(token)}`;
     const isVerify = action === 'verify';
     const isInvite = action === 'invite';
