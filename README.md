@@ -26,3 +26,42 @@ Cloudinary and Brevo credentials are reserved in the root environment template f
 Authentication is planned to support Google OAuth and three application roles: `user`, `admin`, and `superadmin`.
 
 See [the platform flow document](docs/platform-flows.md) for the agreed signup, provider review, service contact, messaging, support, and listing flows.
+
+## Deploying to Vercel and Render
+
+The client is a static Vite app for Vercel. The NestJS API runs as a Render web service and needs PostgreSQL and Redis. Keep this repository's root `package-lock.json` as the lockfile for both deployments.
+
+### Render API
+
+Create a Render Web Service from this repository with the repository root as its Root Directory:
+
+- Build command: `npm ci && npm run build:server`
+- Start command: `npm run start:server`
+- Health check path: `/health/live`
+
+Create a Redis service (Render Key Value) and a Supabase project. In the Supabase dashboard, open **Connect**, choose **Session pooler**, and copy its connection string into Render's `DATABASE_URL`. Use the supplied host, username, and port (session mode uses port `5432`); don't substitute the direct database endpoint or transaction pooler URL. Add `sslmode=require` to the URL query if Supabase's copied string does not already require SSL. URL-encode special characters in the database password. The Render server can use Supabase's shared pooler over IPv4.
+
+Set these API environment variables in Render:
+
+- `NODE_ENV=production`
+- `DATABASE_URL` to the Supabase **Session pooler** connection string
+- `REDIS_URL` to the Render Key Value internal URL
+- `JWT_SECRET` to a long random secret
+- `FRONTEND_URL` and `PUBLIC_URL` to the deployed Vercel site origin, with no trailing slash
+- `BACKEND_URL` to the public Render service URL, with no trailing slash
+- `SWAGGER_ENABLED=false`
+
+Add optional integration variables when those features are configured: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_CALLBACK_URL` (the Render URL plus `/api/auth/google/callback`), Cloudinary credentials, and Brevo credentials. Set the OAuth provider's callback URL to the same callback URL. Render supplies `PORT`; the API uses it automatically. Database migrations are applied when the API starts.
+
+### Vercel client
+
+Import this repository as a Vercel project and set Root Directory to `apps/client`. Enable access to files outside the root directory so the workspace lockfile and packages can be used. Configure:
+
+- Install command: `cd ../.. && npm ci`
+- Build command: `cd ../.. && npm run build:client`
+- Output directory: `dist`
+- Environment variable: `VITE_API_URL` set to the public Render service URL, with no trailing slash
+
+The existing `apps/client/vercel.json` rewrite supports client side routes. Vite embeds `VITE_API_URL` during the build, so redeploy the Vercel project after changing it. Check the Render health endpoint at `/health/live` and the site API connection after both deployments finish.
+
+After building locally, `npm run start:server` starts the production API and `npm run start:client` serves the built client preview. For development, use `npm run dev:server` and `npm run dev:client`.

@@ -9,12 +9,15 @@
   "scripts": {
     "dev:server": "npm run dev --workspace=@jaynstan/server",
     "dev:client": "npm run dev --workspace=@jaynstan/client",
+    "build:server": "npm run build --workspace=@jaynstan/server",
+    "build:client": "npm run build --workspace=@jaynstan/client",
+    "start:server": "npm run start:prod --workspace=@jaynstan/server",
+    "start:client": "npm run preview --workspace=@jaynstan/client",
     "dev": "concurrently -n server,client -c green,blue \"npm:dev:server\" \"npm:dev:client\"",
     "dev:all": "npm run db:up && npm run dev",
     "build": "npm run build --workspace=@jaynstan/client && npm run build --workspace=@jaynstan/server",
     "lint": "npm run lint --workspace=@jaynstan/client && npm run lint --workspace=@jaynstan/server",
     "preview": "npm run preview --workspace=@jaynstan/client",
-    "start:server": "npm run start --workspace=@jaynstan/server",
     "db:up": "docker compose up --wait -d",
     "db:down": "docker compose down",
     "db:logs": "docker compose logs -f"
