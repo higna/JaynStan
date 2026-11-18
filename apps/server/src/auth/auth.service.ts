@@ -220,6 +220,19 @@ export class AuthService implements OnModuleInit {
     return { message: 'If the account needs verification, a new link has been sent.' };
   }
 
+  async resendUserEmailLink(userId: string): Promise<{ message: string }> {
+    const result = await this.database.query<UserRow>(
+      `SELECT id, full_name, email, password_hash, google_subject, profile_image_url, phone, role, email_verified
+       FROM users WHERE id = $1`, [userId],
+    );
+    const user = result.rows[0];
+    if (!user) throw new NotFoundException('User account not found.');
+    if (user.email_verified) throw new BadRequestException('This account is already verified.');
+
+    await this.sendActionLink(user, user.password_hash && !user.google_subject ? 'invite' : 'verify');
+    return { message: `A new account link has been sent to ${user.email}.` };
+  }
+
   async requestPasswordReset(emailInput: string): Promise<{ message: string }> {
     const result = await this.database.query<UserRow>(
       `SELECT id, full_name, email, password_hash, google_subject, profile_image_url, phone, role, email_verified FROM users WHERE lower(email) = $1`,

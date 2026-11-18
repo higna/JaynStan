@@ -53,6 +53,15 @@ export class AuthController {
   @ApiOperation({ summary: 'List platform accounts for user management' })
   listUsers(@Query('search') search?: string) { return this.auth.listUsers(search); }
 
+  @Post('admin/users/:id/resend-verification')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin', 'superadmin')
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Resend an account setup or email verification link' })
+  resendUserEmailLink(@Param('id', ParseUUIDPipe) id: string) {
+    return this.auth.resendUserEmailLink(id);
+  }
+
   @Patch('admin/users/:id/role')
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin', 'superadmin')
